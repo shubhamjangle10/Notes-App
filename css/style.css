@@ -1,0 +1,13 @@
+.purple-gradient{
+    background: linear-gradient(40deg,#ff6ec4,#7873f5)!important;
+    box-shadow: 0px 10px 20px rgb(231, 231, 231);
+}
+body{
+    background-color: aliceblue;
+}
+#nothing{
+    padding: 20px;
+    border: 1px solid rgb(24, 24, 61);
+    border-radius: 20px;
+}
+
