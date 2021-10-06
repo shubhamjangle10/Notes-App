@@ -1,5 +1,5 @@
 console.log("hello");
-let addBtn = document.getElementById('addbtn');
+let addBtn = document.querySelector('#addbtn');
 let title = document.getElementById('title');
 let description = document.getElementById('description');
 let searchButton = document.getElementById('searchButton');
@@ -7,27 +7,25 @@ let searchInput = document.getElementById('searchInput');
 
 
 showNotes();
-addBtn.addEventListener('click', () => {
-    console.log('clicked');
-    let notes = localStorage.getItem("notes");
-    if (notes == null) {
-        console.log('notes null')
-        obj = [];
-    }
-    else {
-        obj = JSON.parse(notes);
-    }
-    myObj = {
-        title: title.value,
-        description: description.value
-    }
-    obj.push(myObj);
-    localStorage.setItem("notes", JSON.stringify(obj));
-    title.value = "";
-    description.value = "";
-    showNotes();
-
-});
+addBtn.addEventListener('submit', () => {
+   console.log('clicked')
+   let notes = localStorage.getItem('notes')
+   if (notes == null) {
+      console.log('notes null')
+      obj = []
+   } else {
+      obj = JSON.parse(notes)
+   }
+   myObj = {
+      title: title.value,
+      description: description.value
+   }
+   obj.push(myObj)
+   localStorage.setItem('notes', JSON.stringify(obj))
+   title.value = ''
+   description.value = ''
+   showNotes()
+})
 
 
 function showNotes() {
